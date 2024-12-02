@@ -1,0 +1,1 @@
+nums = lambda line: map(int, line.split("  ")); input = map(nums, open("input.txt","r").read().splitlines()); lists = {0: [], 1: []}; process_line = lambda line: [lists[i].append(elem) for i, elem in enumerate(line)]; _ = [*map(process_line, input)]; dist = sum(abs(a-b) for a, b in zip(*map(sorted, lists.values()))); print(dist)
